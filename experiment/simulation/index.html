@@ -1,13 +1,208 @@
+<!-- Home page of simulator -->
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
+</head>
+
+<body>
+    <!-- simulation -->
+    <div class="simulation" id="simulation">
+        <div class="topic">
+            <h2>Hall-Effect : Determination of carrier concentration</h2>
+        </div>
+        <div id="content">
+            <div class="subtopics">
+                <h4>Objective:</h4>
+                <ol>
+                    <li>&ensp;To determine the Hall voltage developed across the sample material.</li>
+                    <li>&ensp;To calculate the Hall coefficient and the carrier concentration of the sample material.
+                    </li>
+                </ol>
+                <h4>Apparatus Used:</h4>
+                <p>Two solenoids, Constant current supply, Four probe, Digital gauss meter, Hall effect apparatus (which
+                    consist of Constant Current Generator (CCG),digital milli voltmeter and Hall probe).</p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p>Constant Power Supply</p><img class='img1' src="images/ammeter.png" alt="constantpowersupply">
+                </div>
+                <div class="grid-item">
+                    <p>Electromagnet</p><img class='img2' src="images/solenoid.png" alt="electromagent">
+                </div>
+                <div class="grid-item">
+                    <p>Digital Gauss Meter</p><img class='img3' src="images/gauss.png" alt="gauss">
+                </div>
+                <div class="grid-item">
+                    <p>Hall Probe</p><img class='img4' src="images/hallprobe.png" alt="hallprobe">
+                </div>
+                <div class="grid-item">
+                    <p>Hall Sensor</p><img class='img5' src="images/probe1.png" alt="hallsensor">
+                </div>
+                <div class="grid-item">
+                    <p>Ammeter</p><img class='img6' src="images/power.png" alt="ammeter">
+                </div>
+            </div>
+        </div>
+
+        <!-- content2 -->
+        <div style="display: none;" id="content2">
+            <div class="blocker" onclick="closeobservation()" id="blocker"></div>
+
+            <div class="simoptions" id="simoptions">
+                <div class="procedure">
+                    <label style="text-align:left;">Choose the procedure :</label><br>
+                    <select name="exp" id="exp" onChange="update()">
+                        <option value="Empty" hidden>Select the Procedure</option>
+                        <option value="mfield vs current">Magnetic Field vs Current</option>
+                        <option value="Hall Effect">Hall Effect</option>
+                    </select>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="insert" type="button" onclick="insert()" disabled>Insert Probe</button>
+                    <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Remove
+                        Probe</button>
+                </div>
+                <div class="materialdiv">
+                    <br><label style="text-align:left;">Select the material :</label><br>
+                    <select name="material" id="materials" disabled>
+                        <option value="Empty" hidden>Select the Material</option>
+                        <option value="Germanium">Germanium</option>
+                        <option value="Silicon">Silicon</option>
+                        <option value="Copper">Copper</option>
+                    </select>
+                </div>
+                <div class="current">
+                    <p>Current: <span id="currentvalue"></span> mA</p>
+                    <input type="range" min="200" max="500" value="200" step="50" class="slider" id="cslider" disabled>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="addbutton" type="button" onclick="AddingToArray()" disabled>Add to Table</button>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="observationbutton" type="button" onclick="openobservation()"
+                        disabled>Observations</button>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="finalresult" type="button" onclick="hallcovalue()" disabled>Show Result</button>
+                </div>
+                <div class="result">
+                    <br>
+                    <label>Hall Coefficient : </label><br>
+                    <span id="coefficientvalue"></span><br>
+                    <label>Carrier Concentration : </label><br>
+                    <span id="carriercon"></span><br>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="reset" type="reset" onclick="Refresh()">Reset</button>
+                </div>
+                <div class="help">
+                    <button type="button" onclick="help()"><img src="images/help.png" alt="helpicon"></button>
+                </div>
+            </div>
+
+            <!-- simulation -->
+            <div class="mainsimulation" id="mainsimulation">
+                <span id="fieldvalue" style="display:none ;"></span>
+                <span id="voltagevalue" style="display:none ;"></span>
+                <p id="add">Added Successfully!</p>
+                <img class="circuit" id="circuit1" src="images/circuit1.png" alt="circuit1" style="display:none ;">
+                <img class="circuit" id="circuit2" src="images/circuit2.png" alt="circuit2" style="display:none ;">
+                <img class="circuit" id="circuit3" src="images/circuit3.png" alt="circuit3" style="display:none ;">
+                <img class="circuit" id="circuit4" src="images/circuit4.png" alt="circuit4" style="display:none ;">
+                <img id="probe" src="images/probe.png" alt="probe">
+                <img id="wire" src="images/wire.png" alt="wire">
+                <img id="hallprobe" src="images/hallprobe1.png" alt="hallprobe" style="display:none ;">
+                <img id="hallwire" src="images/wire.png" alt="hallwire" style="display:none ;">
+            </div>
+            <div id="instructions">
+                <div class="icontent">
+                    <h4>Instructions</h4>
+                    <ol>
+                        <li>Select the "Magnetic Field vs Current" procedure from 'Select Procedure' dropdown menu.</li>
+                        <li>Click on the 'Insert Hall Sensor' button to insert the sensor into the electromagnet.</li>
+                        <li>Click on the 'Add to Table' button to add current and magnetic field values to the table.
+                        </li>
+                        <li>Click on the 'Observation' button to view the table.</li>
+                        <li>Click on the 'IBgraph' button to view the graph.</li>
+                        <li>Change the procedure to "Hall Effect" to calculate the hall voltage.</li>
+                        <li>Click on the 'Insert Probe' button to insert the probe into the electromagnet.</li>
+                        <li>Select the material from the "Select the material" dropdown menu.</li>
+                        <li>Adjust the current using 'Current' slider.</li>
+                        <li>Click on the 'Add to Table' button to add hall voltage and magnetic field values to the
+                            table.</li>
+                        <li>Click on the 'Observation' button to view the table.</li>
+                        <li>Click on the 'Plot a graph' button to view the V/B graph.</li>
+                        <li>Clear the observation table before changing the material.</li>
+                        <li>Click on the "Show Result" button to view the result</li>
+                    </ol>
+                </div>
+                <button type="button" onclick="closeobservation()">Close</button>
+            </div>
+            <div id="IBgraph">
+                <div id="myChart"></div>
+                <button onclick="closeobservation()">Close</button>
+            </div>
+            <div class="observation" id="observation">
+                <div class="tablediv" id="tablediv">
+                    <table class="observationTable" id="observationTable">
+                        <tr>
+                            <th>Magnetic Field (mT)</th>
+                            <th>Hall Voltage (mV)</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservation" id="tableObservation">
+                    <button type="button" onclick="closeobservation()">Close</button>
+                    <button type="button" onclick="clearing()" style="width: 70px;">Clear All</button>
+                    <button type="button" onclick="plotgraph()" style="width: 100px;">Plot Graph</button>
+                </div>
+            </div>
+            <!-- ib table  -->
+            <div class="observation" id="IBobservation">
+                <div class="tablediv" id="IBtablediv">
+                    <table class="observationTable" id="IBobservationTable">
+                        <tr>
+                            <th>Current (mA)</th>
+                            <th>Magnetic Field (mT)</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservation" id="IBtableObservation">
+                    <button type="button" onclick="closeobservation()">Close</button>
+                    <button type="button" onclick="clearing()" style="width: 70px;">Clear All</button>
+                    <button type="button" onclick="IBgraph()" style="width: 100px;">I/B GRAPH</button>
+                </div>
+            </div>
+            <!-- images name  -->
+            <div class="electromagnet" id="electromagnet" title="Electromagnet" style="display: none;"></div>
+            <div class="ammeter" id="ammeter" title="Ammeter" style="display: none;"></div>
+            <div class="digitalgaussmeter" id="digitalgaussmeter" title="Digital Gauss Meter" style="display: none;">
+            </div>
+            <div class="hallsensor" id="hallsensor" title="Hall Sensor" style="display: none;"></div>
+            <div id="hprobe" class="hprobe" title="Hall Probe" style="display: none;"></div>
+            <div id="powersupply" class="powersupply" title="Constant Power Supply" style="display: none;"></div>
+        </div>
+
+        <!-- content3 -->
+        <div style="display: none;" id="content3">
+            <div id="graph"></div>
+        </div>
+
+        <!-- next button -->
+        <button id="buttonup" onclick="up()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+        <button id="buttondown" onclick="down()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
