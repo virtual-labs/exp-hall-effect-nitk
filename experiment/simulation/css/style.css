@@ -1,0 +1,558 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.simulation {
+  width: 800px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.simulation .topic {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.subtopics {
+  width: 100%-20px;
+  margin-left: 20px;
+  line-height: 35px;
+}
+
+.subtopics ol li {
+  margin-left: 40px;
+}
+
+.subtopics p {
+  margin-left: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  place-items: center;
+}
+
+.img1 {
+  height: 85px;
+  width: 100px;
+  margin: 20px auto;
+}
+
+.img2 {
+  height: 85px;
+  width: 110px;
+  margin: 20px auto;
+}
+
+.img3 {
+  height: 80px;
+  width: 110px;
+  margin: 20px auto;
+}
+
+.img4 {
+  height: 50px;
+  width: 90px;
+  margin: 20px auto;
+
+}
+
+.img5 {
+  height: 50px;
+  width: 100px;
+  margin: 20px auto;
+
+}
+
+.img6 {
+  height: 85px;
+  width: 90px;
+  margin: 20px auto;
+}
+
+/* next button */
+
+#buttonup {
+  border: 0;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  background-color: white;
+}
+
+#buttondown {
+  border: 0;
+  cursor: pointer;
+  float: left;
+  margin-left: 20px;
+  background-color: white;
+  transform: scaleX(-1);
+  display: none;
+}
+
+#IBgraphbutton {
+  display: none;
+  border: 0;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+#IBgraph {
+  display: none;
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  background-color: white;
+  top: 110px;
+  left: 45px;
+  border: black solid;
+  border-width: 3px;
+  z-index: 7;
+}
+
+#IBgraph button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin-right: 8px;
+  position: relative;
+  margin-top: -38px;
+}
+
+.nextimg {
+  width: 45px;
+  height: 45px;
+}
+
+#content {
+  width: 800px;
+  height: 500px;
+}
+
+#content2 {
+  width: 800px;
+  height: 500px;
+}
+
+/* options */
+
+.simoptions {
+  background-color: rgba(135, 207, 235, 0.621);
+  width: 25%;
+  height: 550px;
+  float: left;
+  filter: blur(0px);
+}
+
+.procedure {
+  margin: 10px;
+}
+
+#exp {
+  height: 35px;
+  width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(65, 62, 62, 0.219);
+  cursor: pointer;
+}
+
+.insert-reset-observation {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.insert-reset-observation button {
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.current {
+  margin: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid red;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  width: 20px;
+  height: 20px;
+}
+
+.materialdiv {
+  margin: 10px;
+}
+
+#materials {
+  height: 35px;
+  width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(65, 62, 62, 0.219);
+  cursor: pointer;
+}
+
+.thickness {
+  margin: 10px;
+}
+
+.hallcurrent {
+  margin: 10px;
+}
+
+.result {
+  margin: 10px;
+  text-align: left;
+}
+
+/* Simulation Box */
+
+.mainsimulation {
+  width: 75%;
+  height: 500px;
+  float: right;
+  text-align: center;
+}
+
+.circuit {
+  width: 600px;
+  height: 426px;
+  margin-top: 30px;
+}
+
+#add {
+  display: none;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#probe {
+  width: 18px;
+  height: 120px;
+  position: relative;
+  top: -368px;
+  left: 293px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+  display: none;
+}
+
+@keyframes probeslideup {
+  from {
+    top: -265px;
+  }
+
+  to {
+    top: -368px;
+  }
+}
+
+@keyframes wireslideup {
+  from {
+    top: -330px;
+  }
+
+  to {
+    top: -433px;
+  }
+}
+
+#wire {
+  width: 189px;
+  height: 200px;
+  position: relative;
+  top: -433px;
+  left: 201px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+  display: none;
+}
+
+@keyframes hallprobeslideup {
+  from {
+    top: -255px;
+  }
+
+  to {
+    top: -365px;
+  }
+}
+
+@keyframes hallwireslideup {
+  from {
+    top: -290px;
+  }
+
+  to {
+    top: -400px;
+  }
+}
+
+#hallprobe {
+  width: 18px;
+  height: 78px;
+  position: relative;
+  top: -365px;
+  left: 289px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+}
+
+#hallwire {
+  width: 188px;
+  height: 205px;
+  position: relative;
+  top: -400px;
+  left: 197px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+}
+
+#fieldvalue {
+  width: 64px;
+  height: 21px;
+  position: absolute;
+  margin-top: 326px;
+  margin-left: 414px;
+  border: none;
+  font-size: 19px;
+  text-align: center;
+}
+
+#voltagevalue {
+  width: 70px;
+  height: 21px;
+  position: absolute;
+  margin-top: 317px;
+  margin-left: 428px;
+  border: none;
+  font-size: 19px;
+  text-align: center;
+}
+
+.observation {
+  display: none;
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  background-color: rgb(174, 215, 232);
+  top: 110px;
+  left: 45px;
+  border: black solid;
+  border-width: 3px;
+  z-index: 7;
+}
+
+.tablediv {
+  height: 360px;
+  justify-content: center;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.observationTable {
+  border-collapse: collapse;
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  height: min-content;
+  background-color: white;
+}
+
+.observation td,
+th {
+  border: 2px solid #000000;
+  text-align: center;
+  padding: 8px;
+}
+
+.tableObservation {
+  display: flex;
+  height: 40px;
+  width: 100%-10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.tableObservation button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#content3 {
+  width: 800px;
+  height: 500px;
+}
+
+#graph {
+  width: 800px;
+  height: 500px;
+}
+
+.blocker {
+  display: none;
+  position: absolute;
+  height: 550px;
+  width: 800px;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.help {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 5px;
+}
+
+.help button {
+  background-color: rgb(189, 231, 249);
+  border: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.help img {
+  width: 25px;
+  height: 25px;
+}
+
+#instructions {
+  display: none;
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  background-color: white;
+  top: 110px;
+  left: 45px;
+  border: black solid;
+  border-width: 3px;
+  z-index: 7;
+}
+
+.icontent {
+  margin-left: 35px;
+  line-height: 1.63rem;
+}
+
+#instructions button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* hover image names */
+
+.electromagnet {
+  height: 10em;
+  width: 12em;
+  position: absolute;
+  top: 90px;
+  left: 405px;
+  z-index: 5;
+}
+
+.ammeter {
+  height: 9em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 320px;
+  left: 222px;
+}
+
+.digitalgaussmeter {
+  height: 9em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 312px;
+  left: 585px;
+}
+
+.hallsensor {
+  height: 1em;
+  width: 6em;
+  position: absolute;
+  z-index: 5;
+  top: 457px;
+  left: 523px;
+}
+
+.hprobe {
+  height: 1.5em;
+  width: 5em;
+  position: absolute;
+  z-index: 5;
+  top: 457px;
+  left: 523px;
+}
+
+.powersupply {
+  height: 7em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 338px;
+  left: 591px;
+}
