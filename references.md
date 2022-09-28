@@ -1,0 +1,1 @@
+Solid State Electronic Devices by Ben G. Streetman, Introductions to Solid State Physics by C. Kittel
