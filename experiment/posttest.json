@@ -7,7 +7,7 @@
         "a": "sample is metal",
         "b": "Sample is p type",
         "c": "Sample is n type",
-        "d": "Both a ans c"
+        "d": "Independent of carrier"
       },
       "explanations": {
         "a": "",
@@ -15,7 +15,7 @@
         "c": "",
         "d": ""
       },
-      "correctAnswer": "d",
+      "correctAnswer": "c",
       "difficulty": "intermediate"
     },
     {
@@ -72,10 +72,10 @@
     {
      "question": "Which of the following are the applications of the Hall effect?",
       "answers": {
-        "a": "Hall Sensor",
+        "a": "To determine the entropy",
         "b": "To determine the type of semiconductor",
         "c": "To determine the viscosity",
-        "d": "Both a and b"
+        "d": "Used in full wave rectifier"
       },
       "explanations": {
         "a": "",
@@ -83,7 +83,7 @@
         "c": "",
         "d": ""
       },
-      "correctAnswer": "d",
+      "correctAnswer": "b",
       "difficulty": "advanced"
     }
   ]
