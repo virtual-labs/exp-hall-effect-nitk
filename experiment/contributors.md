@@ -9,12 +9,12 @@
 
 ### Lab Developers:
 
-| SNo. |            Name             | Institute |
-| :--: | :-------------------------: | :-------: |
-|  1   |      Samar K, 21AD035       |  KPRIET   |
-|  2   | Praveen Samuel PM , 21CS130 |  KPRIET   |
-|  3   |           Akshaya           |   NITK    |
-|  4   |       Anusha B Salian       |   NITK    |
+| SNo. |            Name            | Institute |
+| :--: | :------------------------: | :-------: |
+|  1   |      Samar K, 21AD035      |  KPRIET   |
+|  2   | Praveen Samuel PM, 21CS130 |  KPRIET   |
+|  3   |          Akshaya           |   NITK    |
+|  4   |      Anusha B Salian       |   NITK    |
 
 ### Content Developers:
 
