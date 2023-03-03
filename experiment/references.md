@@ -22,7 +22,7 @@
     <li>Sibeesh P.P | NITK</li>
     <li>Anand Singh | NITK</li>
     <li>Samar K, 21AD035 | KPRIET </li>
-    <li>Praveen Samuel PM , 21CS130 | KPRIET </li>
+    <li>Praveen Samuel PM, 21CS130 | KPRIET </li>
     <li>Akshaya | NITK</li>
     <li>Anusha B Salian | NITK</li>
   </ul></td>
