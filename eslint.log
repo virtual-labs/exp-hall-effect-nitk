@@ -1,0 +1,32 @@
+
+/home/runner/work/exp-hall-effect-nitk/exp-hall-effect-nitk/experiment/simulation/js/data.js
+    1:7  warning  'data' is assigned a value but never used          no-unused-vars
+  609:8  warning  'instructions' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-hall-effect-nitk/exp-hall-effect-nitk/experiment/simulation/js/main.js
+   41:21  warning  'ChemDoodle' is not defined                         no-undef
+   45:25  warning  'ChemDoodle' is not defined                         no-undef
+   48:23  warning  'ChemDoodle' is not defined                         no-undef
+   68:14  warning  'Chart' is not defined                              no-undef
+  135:7   warning  'stopAnimation' is assigned a value but never used  no-unused-vars
+  143:10  warning  Unexpected constant condition                       no-constant-condition
+
+/home/runner/work/exp-hall-effect-nitk/exp-hall-effect-nitk/experiment/simulation/js/script.js
+    4:5   warning  'halli' is assigned a value but never used   no-unused-vars
+   38:10  warning  'up' is defined but never used               no-unused-vars
+   43:10  warning  'down' is defined but never used             no-unused-vars
+   71:10  warning  'update' is defined but never used           no-unused-vars
+  125:10  warning  'insert' is defined but never used           no-unused-vars
+  328:10  warning  'Refresh' is defined but never used          no-unused-vars
+  332:10  warning  'openobservation' is defined but never used  no-unused-vars
+  358:10  warning  'plotgraph' is defined but never used        no-unused-vars
+  397:3   warning  'Plotly' is not defined                      no-undef
+  402:10  warning  'AddingToArray' is defined but never used    no-unused-vars
+  454:14  warning  'i' is already defined                       no-redeclare
+  470:10  warning  'IBgraph' is defined but never used          no-unused-vars
+  509:3   warning  'Plotly' is not defined                      no-undef
+  512:10  warning  'help' is defined but never used             no-unused-vars
+  524:10  warning  'hallcovalue' is defined but never used      no-unused-vars
+
+✖ 23 problems (0 errors, 23 warnings)
+
