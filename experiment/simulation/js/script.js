@@ -19,101 +19,117 @@ let row;
 let ibrow;
 let rH = 0;
 let raisedtoTen;
-const taskTitle = document.querySelector(".task-title");
+const taskTitleText = document.querySelector(".task-title--text");
 const stepTitle = document.querySelector(".practice-step-info");
 const btnTop = document.querySelector(".btn-top");
 const radioButtons = document.querySelectorAll('input[name="navigation"]');
 const buttonBox = document.querySelector(".practice-step-button");
+const simIcons = document.querySelector(".sim-icons");
+
+const simControl = document.querySelector(".sim-icon--control");
+const simResult = document.querySelector(".sim-icon--result");
+
+simControl.addEventListener("click", function () {
+  document.querySelector("#variables").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+simResult.addEventListener("click", function () {
+  document.querySelector("#Results").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
 function displayDiv(ele) {
   const taskScreen = document.querySelectorAll(".task-screen");
   taskScreen.forEach((task) => {
     task.classList.add("hide");
-    
-
   });
+  simIcons.classList.remove("flex");
+  simIcons.classList.add("hide");
   if (ele.classList.contains("tool-objective")) {
     document.querySelector(".objective").classList.remove("hide");
-    taskTitle.textContent = "Objective";
+    taskTitleText.textContent = "Objective";
     document.getElementById("Results").style.display = "none";
     document.getElementById("variables").style.display = "none";
-    document.getElementById('instructions').style.display = 'none';
-    document.getElementsByClassName('observation')[0].style.display = 'none';
+    document.getElementById("instructions").style.display = "none";
+    document.getElementsByClassName("observation")[0].style.display = "none";
     document.getElementById("IBobservation").style.display = "none";
-    
-  
   }
   if (ele.classList.contains("tool-apparatus")) {
     document.querySelector(".apparatus").classList.remove("hide");
-    taskTitle.textContent = "Apparatus";
+    taskTitleText.textContent = "Apparatus";
     document.getElementById("Results").style.display = "none";
     document.getElementById("variables").style.display = "none";
-    document.getElementById('instructions').style.display = 'none';
+    document.getElementById("instructions").style.display = "none";
     document.getElementById("IBobservation").style.display = "none";
-    console.log("graphhidden")
-    document.getElementsByClassName('observation')[0].style.display = 'none';
+    console.log("graphhidden");
+    document.getElementsByClassName("observation")[0].style.display = "none";
   }
   if (ele.classList.contains("tool-help")) {
     // document.querySelector(".help").classList.remove("hide");
-    taskTitle.textContent = "Help";
+    taskTitleText.textContent = "Help";
     document.getElementById("instructions").style.display = "block";
     document.getElementById("Results").style.display = "none";
     document.getElementById("variables").style.display = "none";
-    document.getElementsByClassName('observation')[0].style.display = 'none';
+    document.getElementsByClassName("observation")[0].style.display = "none";
     document.getElementById("IBobservation").style.display = "none";
   }
   if (ele.classList.contains("tool-practice")) {
-    document.getElementById("Results").style.display = "none";
-    document.getElementById("variables").style.display = "none";
+    document.querySelector("#simulation").scrollIntoView({
+      behavior: "smooth",
+    });
+    if (document.querySelector('input[name="exp"]:checked') !== null) {
+      simIcons.classList.remove("hide");
+      simIcons.classList.add("flex");
+    }
     document.querySelector(".practice").classList.remove("hide");
-    document.getElementById("help1").style.disable= "true";
-    taskTitle.textContent = "Experiment";
+    document.getElementById("help1").style.disable = "true";
+    taskTitleText.textContent = "Experiment";
     // document.getElementById("Results").style.display = "block";
     // document.getElementById("variables").style.display = "block";
-  //   if (windowWidth <= 768) {
-  //     // $("#variables").css("display", "block");
-  //     $("#variables").css("width", "100%");
-  // } else {
-  //     // $("#variables").css("display", "block");
-  //     $("#variables").css("width", "200%");
-  // }
-    document.getElementById('instructions').style.display = 'none';
-    $(stepTitle).css("margin-left","5rem");
- 
-btnTop.classList.add("hide");
+    //   if (windowWidth <= 768) {
+    //     // $("#variables").css("display", "block");
+    //     $("#variables").css("width", "100%");
+    // } else {
+    //     // $("#variables").css("display", "block");
+    //     $("#variables").css("width", "200%");
+    // }
+    document.getElementById("instructions").style.display = "none";
+    $(stepTitle).css("margin-left", "5rem");
 
-    console.log("reched here")
+    btnTop.classList.add("hide");
 
-  
-    radioButtons.forEach(radio => {
+    console.log("reched here");
+
+    radioButtons.forEach((radio) => {
       radio.checked = false;
-    
-    
-  })
+    });
 
-  circle1 = new Path2D();
+    circle1 = new Path2D();
 
-$(".canvas").css("display","none");
-
-$(buttonBox).css("display","none");
-let selectedOption = document.querySelector('input[name="exp"]:checked');
-if (selectedOption) {
-  let option = selectedOption.value;
-if (option == "mfield vs current") {
-  taskTitle.textContent = "Mfield vs current";
-  // Show only the variable section
-  document.getElementById("Results").style.display = "none";
-  document.getElementById("variables").style.display = "block";
-}
-else if (option == "Hall Effect") {
-  taskTitle.textContent = "Hall Effect";
-  // Show both the variable and result sections
-  document.getElementById("Results").style.display = "block";
-  document.getElementById("variables").style.display = "block";
-}
-}
+    $(".canvas").css("display", "none");
+    document.getElementById("variables").style.display = "none";
+    document.getElementById("Results").style.display = "none";
+    $(buttonBox).css("display", "none");
+    let selectedOption = document.querySelector('input[name="exp"]:checked');
+    if (selectedOption) {
+      let option = selectedOption.value;
+      if (option == "mfield vs current") {
+        taskTitleText.textContent = "Mfield vs current";
+        // Show only the variable section
+        document.getElementById("variables").style.display = "block";
+        document.getElementById("Results").style.display = "none";
+      }
+      if (option == "Hall Effect") {
+        taskTitleText.textContent = "Hall Effect";
+        // Show both the variable and result sections
+        document.getElementById("Results").style.display = "block";
+        document.getElementById("variables").style.display = "block";
+      }
+    }
   }
 }
-
 
 function blurring() {
   if (blurr == true) {
@@ -127,7 +143,6 @@ function blurring() {
     // document.getElementById("graph").style.display = "none";
     // document.getElementById("buttondown").style.filter = "blur(0px)";
   }
-  
 }
 
 // Next button
@@ -168,114 +183,98 @@ function next() {
 
 // procedure selection
 function update() {
-  let select = document.getElementById('exp');
+  let select = document.getElementById("exp");
   document.getElementById("help1").style.disable = "false";
-
 
   // Check if a radio button is selected
   let selectedOption = document.querySelector('input[name="exp"]:checked');
   if (!selectedOption) {
-      alert("Please select an experiment option");
-      return; // Exit the function if no option is selected
+    alert("Please select an experiment option");
+    return; // Exit the function if no option is selected
   }
 
   let option = selectedOption.value;
-
+  simIcons.classList.remove("hide");
+  simIcons.classList.add("flex");
   if (option == "mfield vs current") {
+    document.getElementById("variables").style.display = "block";
+    document.getElementById("Results").style.display = "none";
+    simResult.classList.add("hide");
     document.getElementById("procedure-title").style.display = "none";
     document.getElementById("proc").style.display = "none";
-      taskTitle.textContent = "Mfield vs current";
-      $(document).ready(function () {
-          var windowWidth = $(window).width();
+    taskTitleText.textContent = "Mfield vs current";
 
-          if (windowWidth <= 768) {
-              $("#variables").css("display", "block");
-              $("#variables").css("width", "100%");
-          } else {
-              $("#variables").css("display", "block");
-              $("#variables").css("width", "200%");
-          }
-
-          $(window).resize(function () {
-              windowWidth = $(window).width();
-
-              if (windowWidth <= 945) {
-                  $("#variables").css("width", "100%");
-              } else {
-                  $("#variables").css("width", "200%");
-              }
-          });
-      });
-
-      document.getElementById("insert").innerHTML = "Insert Hall Sensor";
-      document.getElementById("remove").innerHTML = "Remove Hall Sensor";
-      document.getElementById("circuit1").style.display = "block";
-      document.getElementById("circuit2").style.display = "none";
-      document.getElementById("circuit3").style.display = "none";
-      document.getElementById("circuit4").style.display = "none";
-      document.getElementById("fieldvalue").style.display = "block";
-      document.getElementById("voltagevalue").style.display = "none";
-      document.getElementById("insert").disabled = false;
-      document.getElementById("electromagnet").style.display = "block";
-      document.getElementById("ammeter").style.display = "block";
-      document.getElementById("digitalgaussmeter").style.display = "block";
-      document.getElementById("hallsensor").style.display = "block";
-      document.getElementById("hprobe").style.display = "none";
-      document.getElementById("finalresult").style.display = "none";
-      document.getElementById("powersupply").style.display = "none";
-      pcheck = true;
-      slider_reset();
-      disable();
-      remove();
+    document.getElementById("insert").innerHTML = "Insert Hall Sensor";
+    document.getElementById("remove").innerHTML = "Remove Hall Sensor";
+    document.getElementById("circuit1").style.display = "block";
+    document.getElementById("circuit2").style.display = "none";
+    document.getElementById("circuit3").style.display = "none";
+    document.getElementById("circuit4").style.display = "none";
+    document.getElementById("fieldvalue").style.display = "block";
+    document.getElementById("voltagevalue").style.display = "none";
+    document.getElementById("insert").disabled = false;
+    document.getElementById("electromagnet").style.display = "block";
+    document.getElementById("ammeter").style.display = "block";
+    document.getElementById("digitalgaussmeter").style.display = "block";
+    document.getElementById("hallsensor").style.display = "block";
+    document.getElementById("hprobe").style.display = "none";
+    document.getElementById("finalresult").style.display = "none";
+    document.getElementById("powersupply").style.display = "none";
+    pcheck = true;
+    slider_reset();
+    disable();
+    remove();
   } else if (option == "Hall Effect") {
-      taskTitle.textContent = "Hall Effect";
-      document.getElementById("procedure-title").style.display = "none";
-      document.getElementById("proc").style.display = "none";
-      $(document).ready(function () {
-          var windowWidth = $(window).width();
+    simResult.classList.remove("hide");
+    taskTitleText.textContent = "Hall Effect";
+    document.getElementById("variables").style.display = "block";
+    document.getElementById("Results").style.display = "block";
+    document.getElementById("procedure-title").style.display = "none";
+    document.getElementById("proc").style.display = "none";
+    // $(document).ready(function () {
+    //   var windowWidth = $(window).width();
 
-          if (windowWidth <= 768) {
-              $("#variables").css("display", "block");
-              $("#variables").css("width", "100%");
-          } else {
-              $("#variables").css("display", "block");
-              $("#variables").css("width", "100%");
-          }
+    //   if (windowWidth <= 768) {
+    //     $("#variables").css("display", "block");
+    //     $("#variables").css("width", "100%");
+    //   } else {
+    //     $("#variables").css("display", "block");
+    //     $("#variables").css("width", "100%");
+    //   }
 
-          $(window).resize(function () {
-              windowWidth = $(window).width();
+    //   $(window).resize(function () {
+    //     windowWidth = $(window).width();
 
-              if (windowWidth <= 945) {
-                  $("#variables").css("width", "100%");
-              } else {
-                  $("#variables").css("width", "100%");
-              }
-          });
-      });
+    //     if (windowWidth <= 945) {
+    //       $("#variables").css("width", "100%");
+    //     } else {
+    //       $("#variables").css("width", "100%");
+    //     }
+    //   });
+    // });
 
-      document.getElementById("insert").innerHTML = "Insert Probe";
-      document.getElementById("remove").innerHTML = "Remove Probe";
-      document.getElementById("finalresult").style.display = "block";
-      document.getElementById("insert").disabled = false;
-      document.getElementById("Results").style.display = "block";
-      document.getElementById("circuit1").style.display = "none";
-      document.getElementById("circuit2").style.display = "none";
-      document.getElementById("circuit3").style.display = "block";
-      document.getElementById("circuit4").style.display = "none";
-      document.getElementById("fieldvalue").style.display = "none";
-      document.getElementById("voltagevalue").style.display = "block";
-      document.getElementById("electromagnet").style.display = "block";
-      document.getElementById("ammeter").style.display = "block";
-      document.getElementById("digitalgaussmeter").style.display = "none";
-      document.getElementById("hallsensor").style.display = "none";
-      document.getElementById("hprobe").style.display = "block";
-      document.getElementById("powersupply").style.display = "block";
-      pcheck = false;
-      slider_reset();
-      remove();
+    document.getElementById("insert").innerHTML = "Insert Probe";
+    document.getElementById("remove").innerHTML = "Remove Probe";
+    document.getElementById("finalresult").style.display = "block";
+    document.getElementById("insert").disabled = false;
+    document.getElementById("Results").style.display = "block";
+    document.getElementById("circuit1").style.display = "none";
+    document.getElementById("circuit2").style.display = "none";
+    document.getElementById("circuit3").style.display = "block";
+    document.getElementById("circuit4").style.display = "none";
+    document.getElementById("fieldvalue").style.display = "none";
+    document.getElementById("voltagevalue").style.display = "block";
+    document.getElementById("electromagnet").style.display = "block";
+    document.getElementById("ammeter").style.display = "block";
+    document.getElementById("digitalgaussmeter").style.display = "none";
+    document.getElementById("hallsensor").style.display = "none";
+    document.getElementById("hprobe").style.display = "block";
+    document.getElementById("powersupply").style.display = "block";
+    pcheck = false;
+    slider_reset();
+    remove();
   }
 }
-
 
 function enable() {
   document.getElementById("materials").disabled = false;
@@ -522,10 +521,7 @@ function closeobservation() {
   document.getElementById("blocker").style.display = "none";
   document.getElementById("myChart").style.display = "none";
   document.getElementById("instructions").style.display = "none";
-
-
 }
-
 
 function closeobservation1() {
   if (pcheck == false) {
@@ -541,10 +537,7 @@ function closeobservation1() {
   // document.getElementById("blocker").style.display = "none";
   // document.getElementById("myChart").style.display = "none";
   // document.getElementById("instructions").style.display = "none";
-  
-
 }
-
 
 function plotgraph() {
   // third page
@@ -553,7 +546,7 @@ function plotgraph() {
   document.getElementById("graph").style.display = "block";
   next();
   document.getElementById("finalresult").disabled = false;
-    blurr = true;
+  blurr = true;
   blurring();
 }
 
@@ -580,7 +573,7 @@ function plotting() {
   // Define Layout
   var layout = {
     width: 800,
-    
+
     xaxis: {
       title: "Magnetic field (mT)",
     },
@@ -590,10 +583,10 @@ function plotting() {
     title: "Hall Voltage (mV) vs Magnetic field (mV)",
   };
 
-
   // Display using Plotly
   Plotly.newPlot("graph", data, layout, {
-    displaylogo: false,displayModeBar: false 
+    displaylogo: false,
+    displayModeBar: false,
   });
 }
 
@@ -633,7 +626,6 @@ function addobservation() {
     } else {
       console.error("Table 'observationTable' not found.");
     }
-
   } else if (pcheck === true) {
     magcount += 1;
     let ibtable = document.getElementById("IBobservationTable");
@@ -653,20 +645,20 @@ function addobservation() {
 
 function clearing() {
   let ibtable = document.getElementById("IBobservationTable"); // Ensure ibtable is defined
-  if (ibtable) {  // Check if the table exists
-      for (var i = 1; i < ibtable.rows.length;) {
-          ibtable.deleteRow(i);
-      }
-      magcount = -1;
-      ibXarray.length = 0;
-      document.getElementById("finalresult").disabled = false;
-      // document.getElementById('tfreq').innerHTML = null;
-      // document.getElementById('pfreq').innerHTML = null;
+  if (ibtable) {
+    // Check if the table exists
+    for (var i = 1; i < ibtable.rows.length; ) {
+      ibtable.deleteRow(i);
+    }
+    magcount = -1;
+    ibXarray.length = 0;
+    document.getElementById("finalresult").disabled = false;
+    // document.getElementById('tfreq').innerHTML = null;
+    // document.getElementById('pfreq').innerHTML = null;
   } else {
-      console.error("Table element not found!");
+    console.error("Table element not found!");
   }
 }
-
 
 function timer() {
   document.getElementById("add").style.display = "none";
@@ -727,7 +719,6 @@ function sortingArray(sortarray) {
 }
 
 function hallcovalue() {
-  
   document.getElementById("coefficientvalue").innerHTML = rH + raisedtoTen;
   document.getElementById("carriercon").innerHTML = concentration + " m^-3";
 }

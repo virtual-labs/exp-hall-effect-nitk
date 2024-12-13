@@ -1,6 +1,9 @@
-.main-container {
-  background-color: var(--clr-body-clr);
-  overflow-x: hidden;
+.container {
+  background-color: var(--clr-container-clr);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  max-height: 100vh;
 }
 .title-div-container {
   width: 100%;
@@ -8,13 +11,18 @@
   background-color: var(--clr-container-clr);
   z-index: 105;
   position: relative;
-  padding: 0.5rem 0.5rem;
+  padding: 0.25rem;
+  grid-column: 1/-1;
 }
-#add{
+#add {
+  position: absolute;
+  top: 0;
   display: none;
 }
-#remove{
-  display: none; 
+#remove {
+  position: absolute;
+  top: 0;
+  display: none;
   font-size: 12px;
 }
 
@@ -85,21 +93,11 @@ h1 {
   color: var(--clr-text-clr);
   text-transform: uppercase;
 }
-.container {
-  padding: 0 0 0.5rem 0.5rem;
-  display: flex;
-  flex-direction: row;
-  background-color: var(--clr-container-clr);
-
-  gap: 0.5rem;
-}
 
 /* ********************** */
 /* *******SIDEBAR******* */
 /* ********************** */
-
 .sidebar {
-  /* background-color: gray; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,8 +105,10 @@ h1 {
   background-color: #fffcfc;
   box-shadow: 0 1rem 1rem 0 rgba(177, 176, 176, 0.855);
   padding: 1.2rem 1.6rem;
+  margin: 0.25rem;
   border-radius: 0.9rem;
   left: 0;
+  cursor: pointer;
 }
 
 .logo-div {
@@ -166,6 +166,11 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0.25rem;
+  margin-bottom: 0;
+  border-radius: 0.9rem;
 }
 
 .task-title {
@@ -181,6 +186,9 @@ h1 {
   );
   color: var(--clr-text-clr);
   letter-spacing: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .task-variable {
@@ -194,9 +202,10 @@ h1 {
 .main-section {
   display: grid;
   /* grid-template-columns: repeat(2, 1fr); */
-  grid-template-columns: 50fr 50fr;
+  grid-template-columns: 1fr;
   gap: 0.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   padding: 0 0.5rem 0 0;
 }
@@ -209,21 +218,21 @@ h1 {
   max-height: 100%;
   font-size: 1.6rem;
   border: 0.5rem solid var(--clr-text-clr);
-  overflow-y: hidden;
-  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: hidden; */
 }
 
 .main__task-div:nth-child(1) {
   position: relative;
   grid-column: 1/-1;
   /* grid-row: 1/4; */
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .main__task-div:nth-child(4) {
   grid-column: 1/-1;
   /* grid-row: 1/4; */
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .title-control-div {
@@ -906,28 +915,28 @@ input[type="radio"] {
     box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.8);
   }
 }
-#electromagnet{
+#electromagnet {
   display: none;
 }
-#ammeter{
+#ammeter {
   display: none;
 }
-#digitalgaussmeter{
+#digitalgaussmeter {
   display: none;
 }
-#hallsensor{
+#hallsensor {
   display: none;
 }
-#hprobe{
+#hprobe {
   display: none;
 }
-#powersupply{
+#powersupply {
   display: none;
 }
-#c1{
+#c1 {
   width: 70px;
 }
-#c2{
+#c2 {
   width: 100px;
 }
 #instructions {
@@ -1093,7 +1102,7 @@ th {
   display: flex;
   justify-content: center;
 }
-#reset{
+#reset {
   height: 42px;
 }
 
@@ -1297,7 +1306,7 @@ th {
   width: 6%;
   display: none;
   /* height: 3%; */
-  top: 72%;
+  top: 70%;
   left: 70%;
   position: absolute;
   /* margin-top: 326px; */
@@ -1306,16 +1315,16 @@ th {
   font-size: 19px;
   text-align: center;
 }
-#circuit1{
+#circuit1 {
   display: none;
 }
-#circuit2{
+#circuit2 {
   display: none;
 }
-#circuit3{
+#circuit3 {
   display: none;
 }
-#circuit4{
+#circuit4 {
   display: none;
 }
 
@@ -1323,7 +1332,7 @@ th {
   width: 6%;
   /* height: 3%; */
   display: none;
-  top: 69.5%;
+  top: 68.5%;
   left: 70%;
   position: absolute;
   /* margin-top: 326px; */
@@ -1459,4 +1468,21 @@ th {
   to {
     top: 27%;
   }
+}
+
+.sim-icons {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.flex {
+  display: flex;
+}
+
+.sim-icon {
+  position: relative;
+  justify-self: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  cursor: pointer;
 }

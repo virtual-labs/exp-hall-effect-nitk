@@ -10,30 +10,29 @@ em:current font size
 /* **************************** */
 
 @media (min-width: 1200px) {
-  
-.objective {
-  padding: 13rem;
-}
-.canvas__div {
-  grid-template-columns: 1fr;
-}
-/* #variables {
+  .objective {
+    padding: 13rem;
+  }
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
+  /* #variables {
   width: 100%;
 } */
-#IBgraph{
-  transform: scale(0.75);
-  margin-top: -10%;
-  margin-left: -17%;
-  width: 119%;
-  height: auto;
-}
-#content3{
-  transform: scale(0.75);
-  margin-top: -10%;
-  margin-left: -21%;
-  width: 128%;
-  height: auto;
-}
+  #IBgraph {
+    transform: scale(0.75);
+    margin-top: -10%;
+    margin-left: -17%;
+    width: 119%;
+    height: auto;
+  }
+  #content3 {
+    transform: scale(0.75);
+    margin-top: -10%;
+    margin-left: -21%;
+    width: 128%;
+    height: auto;
+  }
 }
 
 /* **************************** */
@@ -80,26 +79,26 @@ em:current font size
   /* #variables {
     width: 100%;
   } */
- 
+
   .objective {
     padding: 10rem;
   }
   .canvas__div {
     grid-template-columns: 1fr;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.9);
     margin-top: 6%;
     margin-left: 3%;
     width: 81%;
     height: auto;
   }
-  #content3{
+  #content3 {
     transform: scale(1);
-        margin-top: 0%;
-        margin-left: -3%;
-        width: 96%;
-        height: auto;
+    margin-top: 0%;
+    margin-left: -3%;
+    width: 96%;
+    height: auto;
   }
 }
 
@@ -130,6 +129,10 @@ em:current font size
     justify-content: space-evenly;
     border-radius: 0;
     scroll-behavior: auto;
+    margin: 0;
+  }
+  .main {
+    grid-column: 1/-1;
   }
   .tool-menu {
     list-style: none;
@@ -220,20 +223,19 @@ em:current font size
   .objective {
     padding: 10rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.8);
     margin-top: -7%;
     margin-left: -7%;
     width: 101%;
     height: auto;
-    
   }
-  #content3{
+  #content3 {
     transform: scale(0.85);
-        margin-top: -2%;
-        margin-left: -8%;
-        width: 106%;
-        height: auto;
+    margin-top: -2%;
+    margin-left: -8%;
+    width: 106%;
+    height: auto;
   }
   /* #IBgraph{
     transform: scale(0.48);
@@ -262,21 +264,21 @@ em:current font size
   .tool-list span {
     font-size: 1.6rem;
   }
- 
+
   .footer {
     margin-bottom: 78px;
   }
   .objective {
     padding: 10rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.9);
     margin-top: -2%;
     margin-left: -7%;
     width: 101%;
     height: 79%;
   }
-  #content3{
+  #content3 {
     transform: scale(0.8);
     margin-top: -10%;
     margin-left: -15%;
@@ -315,7 +317,7 @@ em:current font size
   .main__task-div:nth-child(4) {
     margin-bottom: 6rem;
   }
- 
+
   .cross-img {
     width: 60%;
   }
@@ -328,7 +330,7 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
- 
+
   .objective {
     padding: 9rem;
   }
@@ -337,21 +339,21 @@ em:current font size
     transform: scale(0.8);
    
   } */
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.65);
     margin-top: -9%;
     margin-left: -26%;
     height: auto;
     width: 135%;
   }
-  #content3{
+  #content3 {
     transform: scale(0.6);
     margin-top: -21%;
     margin-left: -34%;
     height: auto;
     width: 152%;
   }
-  .observation{
+  .observation {
     transform: scale(0.8);
   }
 }
@@ -427,35 +429,34 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
- 
+
   .objective {
     padding: 9rem;
   }
-  #IBgraph{
+  #IBgraph {
     transform: scale(0.5);
     margin-top: -30%;
     margin-left: -42%;
     width: 164%;
     height: 123%;
-
   }
-  #content3{
+  #content3 {
     transform: scale(0.45);
     margin-top: -39%;
     margin-left: -59%;
     width: 195%;
     height: auto;
   }
-  .observation{
+  .observation {
     transform: scale(0.7);
   }
-  #instruct{
+  #instruct {
     font-size: 2rem;
   }
-  #fieldvalue{
+  #fieldvalue {
     font-size: 12px;
   }
-  #voltagevalue{
+  #voltagevalue {
     font-size: 12px;
     top: 69.5%;
   }
@@ -487,7 +488,6 @@ em:current font size
   }
   .canvas__div {
     grid-template-columns: 1fr;
-   
   }
   .objective {
     padding: 5rem;
@@ -518,34 +518,32 @@ em:current font size
   .footer {
     margin-bottom: 78px;
   }
-  
-  #IBgraph{
-  
+
+  #IBgraph {
     transform: scale(0.45);
     margin-top: -50%;
     margin-left: -64%;
     height: 152%;
     width: 71rem;
-
   }
-  #content3{
+  #content3 {
     transform: scale(0.41);
     margin-top: -54%;
     margin-left: -80%;
     width: 234%;
     height: auto;
   }
-  
-  .observation{
+
+  .observation {
     transform: scale(0.6);
   }
-  .circuit{
+  .circuit {
     width: 100%;
   }
-  #fieldvalue{
+  #fieldvalue {
     font-size: 12px;
   }
-  #voltagevalue{
+  #voltagevalue {
     font-size: 12px;
     top: 69.5%;
   }

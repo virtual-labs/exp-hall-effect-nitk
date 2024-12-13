@@ -42,17 +42,17 @@
     ></script>
   </head>
   <body>
-    <div class="title-div-container">
-      <div class="title-div">
-        <div class="logo-div">
-          <a href="#"
-            ><img src="images/logo_nitk.png" alt="Logo" class="logo"
-          /></a>
-        </div>
-        <h1>Hall-Effect : Determination of carrier concentration</h1>
-      </div>
-    </div>
     <div class="container">
+      <div class="title-div-container">
+        <div class="title-div">
+          <div class="logo-div">
+            <a href="#"
+              ><img src="images/logo_nitk.png" alt="Logo" class="logo"
+            /></a>
+          </div>
+          <h1>Hall-Effect : Determination of carrier concentration</h1>
+        </div>
+      </div>
       <div class="sidebar">
         <ul class="tool-menu">
           <li class="tool-list tool-objective" onclick="displayDiv(this)">
@@ -90,7 +90,6 @@
               <img
                 id="reset"
                 type="reset"
-                
                 onclick="Refresh()"
                 src="images/bluecwdull.svg"
                 alt="Refresh Button"
@@ -103,7 +102,23 @@
       <div class="main">
         <div class="main-section">
           <div id="simulation" class="main__task-div">
-            <h3 class="task-title">Objective</h3>
+            <h3 class="task-title">
+              <span class="task-title--text">Objective</span>
+              <span class="sim-icons hide">
+                <img
+                  src="./images/controls-wt.png"
+                  alt="controls"
+                  title="Controls"
+                  class="sim-icon sim-icon--control"
+                />
+                <img
+                  src="./images/result-wt.png"
+                  alt=""
+                  title="Results"
+                  class="sim-icon sim-icon--result"
+                />
+              </span>
+            </h3>
 
             <div class="canvas__div">
               <div class="task-screen objective">
@@ -223,37 +238,33 @@
                 </div>
                 <div class="mainsimulation" id="mainsimulation">
                   <span id="voltagevalue"></span>
-                  <p id="add" >Added Successfully!</p>
+                  <p id="add">Added Successfully!</p>
                   <div class="cont1">
-                    <span id="voltagevalue" ></span>
-                    <span id="fieldvalue" ></span>
+                    <span id="voltagevalue"></span>
+                    <span id="fieldvalue"></span>
                     <img
                       class="circuit"
                       id="circuit1"
                       src="images/circuit1.png"
                       alt="circuit1"
-                     
                     />
                     <img
                       class="circuit"
                       id="circuit2"
                       src="images/circuit2.png"
                       alt="circuit2"
-                      
                     />
                     <img
                       class="circuit"
                       id="circuit3"
                       src="images/circuit3.png"
                       alt="circuit3"
-                      
                     />
                     <img
                       class="circuit"
                       id="circuit4"
                       src="images/circuit4.png"
                       alt="circuit4"
-                      
                     />
                     <img id="probe" src="images/probe.png" alt="probe" />
                     <img id="wire" src="images/wire.png" alt="wire" />
@@ -261,14 +272,8 @@
                       id="hallprobe"
                       src="images/hallprobe1.png"
                       alt="hallprobe"
-                   
                     />
-                    <img
-                      id="hallwire"
-                      src="images/wire.png"
-                      alt="hallwire"
-                      
-                    />
+                    <img id="hallwire" src="images/wire.png" alt="hallwire" />
                     <div id="myDiv"></div>
                   </div>
                 </div>
@@ -352,20 +357,10 @@
                   <button type="button" onclick="closeobservation()">
                     Close
                   </button>
-                  <button
-                    type="button"
-                    id="c1"
-                    onclick="clearing()"
-                    
-                  >
+                  <button type="button" id="c1" onclick="clearing()">
                     Clear All
                   </button>
-                  <button
-                    type="button"
-                    id="c2"
-                    onclick="plotgraph()"
-                    
-                  >
+                  <button type="button" id="c2" onclick="plotgraph()">
                     Plot Graph
                   </button>
                 </div>
@@ -404,37 +399,19 @@
                 class="electromagnet"
                 id="electromagnet"
                 title="Electromagnet"
-                
               ></div>
-              <div
-                class="ammeter"
-                id="ammeter"
-                title="Ammeter"
-                
-              ></div>
+              <div class="ammeter" id="ammeter" title="Ammeter"></div>
               <div
                 class="digitalgaussmeter"
                 id="digitalgaussmeter"
                 title="Digital Gauss Meter"
-                
               ></div>
-              <div
-                class="hallsensor"
-                id="hallsensor"
-                title="Hall Sensor"
-                
-              ></div>
-              <div
-                id="hprobe"
-                class="hprobe"
-                title="Hall Probe"
-                
-              ></div>
+              <div class="hallsensor" id="hallsensor" title="Hall Sensor"></div>
+              <div id="hprobe" class="hprobe" title="Hall Probe"></div>
               <div
                 id="powersupply"
                 class="powersupply"
                 title="Constant Power Supply"
-                
               ></div>
             </div>
           </div>
@@ -451,12 +428,7 @@
                   <button id="insert" type="button" onclick="insert()" disabled>
                     Insert Probe
                   </button>
-                  <button
-                    id="remove"
-                    type="button"
-                    onclick="remove()"
-                    
-                  >
+                  <button id="remove" type="button" onclick="remove()">
                     Remove Probe
                   </button>
                 </div>
