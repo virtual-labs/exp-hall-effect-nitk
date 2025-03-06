@@ -1,4 +1,14 @@
-If a metal or a semiconductor carrying a current I is placed in transverse magnetic field B, Potential difference V<sub>H</sub> is produced in a direction normal to both the magnetic field and current directions. This is known as HALL EFFECT. Let a semiconductor sample of thickness t and area of cross section A, carrying a current I be acted upon by a transverse magnetic field B. The magnetic field tends to deflect charge carriers in the sample towards one of its faces leading to an accumulation of charges there. This in turn produces an electric field E<sub>H</sub> in a direction which opposes the Lorentz force due to the magnetic field. The electric field builts till it exactly compensated for the effect of magnetic field. The potential difference V<sub>H</sub> arising due to E<sub>H</sub> is given by
+If a metal or a semiconductor carrying a current I is placed in transverse magnetic field B, Potential difference V<sub>H</sub> is produced in a direction normal to both the magnetic field and current directions. This is known as HALL EFFECT.
+
+<center>
+
+<img src="./images/hall.png" alt="Hall Effect" />
+
+<figcaption>Source: <a href="">https://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/Hall.html</a></figcaption>
+
+</center>
+
+Let a semiconductor sample of thickness t and area of cross section A, carrying a current I be acted upon by a transverse magnetic field B. The magnetic field tends to deflect charge carriers in the sample towards one of its faces leading to an accumulation of charges there. This in turn produces an electric field E<sub>H</sub> in a direction which opposes the Lorentz force due to the magnetic field. The electric field builts till it exactly compensated for the effect of magnetic field. The potential difference V<sub>H</sub> arising due to E<sub>H</sub> is given by
 
 <center>
 
