@@ -474,19 +474,19 @@ function material() {
   if (option == "Germanium") {
     c = 2.33 * Math.pow(10, 19);
     rH = (1 / (c * e)).toFixed(2);
-    raisedtoTen = " x 10^ -11 m^3/C";
-    concentration = "2.33 x 10^ 19";
+    raisedtoTen = " x 10<sup>-11</sup> m<sup>3</sup>/C";
+    concentration = "2.33 x 10<sup>19</sup> ";
   } else if (option == "Silicon") {
     // doped silicon
     c = 1.7 * Math.pow(10, 18);
     rH = (1 / (c * e)).toFixed(2);
-    raisedtoTen = " x 10^ -4 m^3/C";
-    concentration = "1.7 x 10^ 18";
+    raisedtoTen = " x 10<sup>-4</sup> m<sup>3</sup>/C";
+    concentration = "1.7 x 10<sup>18</sup>";
   } else if (option == "Copper") {
     c = 4.7 * Math.pow(10, 17);
     rH = (1 / (c * e)).toFixed(2);
-    raisedtoTen = " x 10^ -11 m^3/C";
-    concentration = "4.7 x 10^ 17";
+    raisedtoTen = " x 10<sup>-11</sup> m<sup>3</sup>/C";
+    concentration = "4.7 x 10<sup>17</sup>";
   }
 }
 
@@ -720,5 +720,6 @@ function sortingArray(sortarray) {
 
 function hallcovalue() {
   document.getElementById("coefficientvalue").innerHTML = rH + raisedtoTen;
-  document.getElementById("carriercon").innerHTML = concentration + " m^-3";
+  document.getElementById("carriercon").innerHTML =
+    concentration + " m<sup>-3</sup>";
 }
