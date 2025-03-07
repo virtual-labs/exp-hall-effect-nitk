@@ -472,7 +472,7 @@ h1 {
   grid-column: 1/-1;
   letter-spacing: 0.2rem;
 }
-.btn:disabled {
+.insert-reset-observation button:disabled {
   background-image: linear-gradient(
     to bottom,
     var(--clr-body-clr),
