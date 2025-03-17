@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the typical carrier concentration of a metal?",
+      "answers": {
+        "a": "10<sup>28</sup>m<sup>-3</sup>",
+        "b": "10<sup>15</sup>m<sup>-3</sup>",
+        "c": "10<sup>10</sup>m<sup>-3</sup>",
+        "d": "10<sup>7</sup>m<sup>-3</sup>"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the typical carrier concentration of Semiconductor?",
+      "answers": {
+        "a": "10<sup>12</sup>m<sup>-3</sup>",
+        "b": "10<sup>23</sup>m<sup>-3</sup>",
+        "c": "10<sup>18</sup>m<sup>-3</sup>",
+        "d": "None of these"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the magnetic field strength for a pole distance of 1 cm and 200mA current in a typical Helmholtz set up?",
+      "answers": {
+        "a": "0.010 T",
+        "b": "0.040 T",
+        "c": "0.120 T",
+        "d": "0.070 T"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "It is interesting to note that there are four wires going through the probe. What could be the reason for using 4 wires instead of two ?",
+      "answers": {
+        "a": "Two wires for measuring current and two wires for measuring voltage",
+        "b": "one wire for measuring current two wires for measuring magnetic field and one wire to measure voltage ",
+        "c": "two wires for measuring magnetic field and two wires for measuring carrier concentration",
+        "d": "one wire to measure current, one for voltage, one for magnetic field and one for carrier concentration."
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What do you think about the nature of current in probe and in the electromagnet",
+      "answers": {
+        "a": "AC current in Probe and AC current in magnet",
+        "b": "DC current in probe and AC current in Magnet",
+        "c": "DC current in Probe and DC current in magnet",
+        "d": "AC current in Probe and DC current in magnet"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    }
+  ]
+}
