@@ -2,38 +2,89 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "By observing the sign of the Hall voltage, let us say it is negative for your observation, what can you conclude about the nature of the carrier?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "sample is metal",
+        "b": "Sample is p type",
+        "c": "Sample is n type",
+        "d": "Independent of carrier"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the nature of graph plotted B Vs Hall Voltage?",
+      "answers": {
+        "a": "Straight line",
+        "b": "Parabola",
+        "c": "Exponential",
+        "d": "Nonlinear"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "If the distance between the magnets increased to double of the original value, what change would you expect for hall voltage?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Increase",
+        "b": "Decrease",
+        "c": "Remain constant",
+        "d": "First increase then decrease"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Instead of semiconductor/ metal if you use an insulator, will you observe Hall voltage?",
+      "answers": {
+        "a": "An AC Hall voltage is observed",
+        "b": "There will be a finite hall voltage",
+        "c": "Hall voltage will be zero for a short time",
+        "d": "Hall voltage is not observed"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
       "difficulty": "beginner"
+    },
+    {
+     "question": "Which of the following are the applications of the Hall effect?",
+      "answers": {
+        "a": "To determine the entropy",
+        "b": "To determine the type of semiconductor",
+        "c": "To determine the viscosity",
+        "d": "Used in full wave rectifier"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
   ]
 }
